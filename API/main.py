@@ -34,6 +34,8 @@ def rt(r1,r2,r3):
     s_rt=(1/float(r1)+1/float(r2)+1/float(r3))**-1
     data = "อนุกรม = {} ขนาน = {:.2f}".format(r_rt,s_rt)
     return data
+
+print('test')
 if __name__ == "__main__":
     uvicorn.run(app, host="192.168.219.161", port=8000)
 
