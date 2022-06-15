@@ -57,7 +57,12 @@ def updatehw(ID):
 def inserthw(name,hw_name):
     data = a.inserthw(name,hw_name)
     return data
-    
+
+@app.get("/deletehw")
+def deletehw(ID):
+    data = a.deletehw(ID)
+    return data
+
 if __name__ == "__main__":
     uvicorn.run(app, host="localhost", port=8000)
 

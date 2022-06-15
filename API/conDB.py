@@ -73,10 +73,10 @@ class Con:
         mydb.close()
         return True
 
-    def deleteehw():
+    def deletehw(ID):
         mydb = conDB()
         mycursor = mydb.cursor(dictionary=True) 
-        sql = "DELETE FROM hard_ware WHERE id = 113"
+        sql = "DELETE FROM hard_ware WHERE id = {}".format(ID)
         mycursor.execute(sql)
         mydb.commit()
         mycursor.close()

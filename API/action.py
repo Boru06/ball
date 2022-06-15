@@ -22,3 +22,7 @@ class Action:
             data = {"error",True}
         return data
 
+    def deletehw(ID):
+        data = c.deletehw(ID)
+        return data
+
