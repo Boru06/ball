@@ -43,6 +43,15 @@ def get_hw():
     data = a.gethw()
     return data
 
+@app.get("/update_status_hw")
+def updatehw(ID,status):
+    data = a.updatehw(ID,status)
+    return data
+
+@app.get("/selectid")
+def updatehw(id):
+    data = a.selectid(id)
+    return data
 
 if __name__ == "__main__":
     uvicorn.run(app, host="localhost", port=8000)

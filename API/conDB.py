@@ -32,10 +32,10 @@ def conDB():
     return mydb
 
 class Con:
-    def gethw():
+    def selectid(id):
         mydb = conDB()
         mycursor = mydb.cursor(dictionary=True) 
-        sql = "SELECT * FROM hard_ware"
+        sql = "SELECT * FROM hard_ware WHERE id = {}".format(id)
         mycursor.execute(sql)
         data = mycursor.fetchall()
         mycursor.close()
@@ -63,10 +63,10 @@ class Con:
         mydb.close()
         return ID
 
-    def updatehw():
+    def updatehw(ID,status):
         mydb = conDB()
         mycursor = mydb.cursor(dictionary=True) 
-        sql = "UPDATE hard_ware SET status = 'ON' WHERE id = 7"
+        sql = "UPDATE hard_ware SET status = '{}' WHERE id = {}".format(status,ID)
         mycursor.execute(sql)
         mydb.commit()
         mycursor.close()

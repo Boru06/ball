@@ -2,9 +2,11 @@ from conDB import Con
 
 c = Con
 class Action:
-    def gethw():
-        data = c.gethw()
+    def selectid(id):
+        data = c.selectid(id)
         return data
 
-x = Action.gethw()
-print(x)
+    def updatehw(ID,status):
+        data = c.updatehw(ID,status)
+        return data
+
