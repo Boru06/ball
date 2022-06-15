@@ -3,6 +3,9 @@ from fastapi import FastAPI
 import uvicorn
 app = FastAPI()
 
+from action import Action
+a = Action
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
@@ -35,8 +38,13 @@ def rt(r1,r2,r3):
     data = "อนุกรม = {} ขนาน = {:.2f}".format(r_rt,s_rt)
     return data
 
-print('test')
+@app.get("/gethw")
+def get_hw():
+    data = a.gethw()
+    return data
+
+
 if __name__ == "__main__":
-    uvicorn.run(app, host="192.168.219.161", port=8000)
+    uvicorn.run(app, host="localhost", port=8000)
 
 
