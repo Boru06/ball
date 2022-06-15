@@ -49,10 +49,15 @@ def updatehw(ID,status):
     return data
 
 @app.get("/selectid")
-def updatehw(id):
-    data = a.selectid(id)
+def updatehw(ID):
+    data = a.selectid(ID)
     return data
 
+@app.get("/inserthw")
+def inserthw(name,hw_name):
+    data = a.inserthw(name,hw_name)
+    return data
+    
 if __name__ == "__main__":
     uvicorn.run(app, host="localhost", port=8000)
 

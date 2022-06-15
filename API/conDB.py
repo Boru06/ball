@@ -32,10 +32,10 @@ def conDB():
     return mydb
 
 class Con:
-    def selectid(id):
+    def selectid(ID):
         mydb = conDB()
         mycursor = mydb.cursor(dictionary=True) 
-        sql = "SELECT * FROM hard_ware WHERE id = {}".format(id)
+        sql = "SELECT * FROM hard_ware WHERE id = {}".format(ID)
         mycursor.execute(sql)
         data = mycursor.fetchall()
         mycursor.close()
@@ -52,10 +52,10 @@ class Con:
         mydb.close()
         return data
     
-    def inserthw():
+    def inserthw(name,hw_name):
         mydb = conDB()
         mycursor = mydb.cursor(dictionary=True) 
-        sql = "INSERT INTO hard_ware(name,hw_name,status,value)VALUES('ball','Light','OFF',0)"
+        sql = "INSERT INTO hard_ware(name,hw_name,status,value)VALUES('{}','{}','OFF',0)".format(name,hw_name)
         mycursor.execute(sql)
         mydb.commit()
         ID = mycursor.lastrowid
@@ -92,5 +92,7 @@ class Con:
         mycursor.close()
         mydb.close()
         return data
+        
+
 
 
